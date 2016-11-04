@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   
+    <script>
+        $(function () {
+            $('#nav a').on('click', function (e) {
+                e.preventDefault();
+                var page = $(this).attr('href');
+                $('#content').load(page);
+            });
+        });
+    </script>
+</head>
+<body>
+
+<nav class="nav navbar-inverse">
+  <div class="container-fluid" id="nav">
+    <div class="navbar-header">
+      <a class="navbar-brand">HSBC</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="home.vm">Home</a></li>
+      <li><a href="/priorityPayment">Priority Payment</a></li>
+      <li><a href="velocity/customerTransfer.vm">Customer Transfer</a></li>
+      <li><a href="velocity/euroZonePayment.vm">EuroZone Payment</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container-fluid" id="content">
+  
+</div>
+
+</body>
+</html>
