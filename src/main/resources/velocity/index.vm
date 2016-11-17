@@ -4,9 +4,17 @@
   <title>Bootstrap Case</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+  <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.css"/>
+  <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+  <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://www.amcharts.com/lib/3/maps/js/continentsLow.js"></script>
+  <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
+  <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>	
    
     <script>
         $(function () {
@@ -28,8 +36,8 @@
     <ul class="nav navbar-nav">
       <li class="active"><a href="home.vm">Home</a></li>
       <li><a href="/priorityPayment">Priority Payment</a></li>
-      <li><a href="velocity/customerTransfer.vm">Customer Transfer</a></li>
-      <li><a href="velocity/euroZonePayment.vm">EuroZone Payment</a></li>
+      <li><a href="/customerTransfer.vm">Customer Transfer</a></li>
+      <li><a href="/euroZonePayment.vm">EuroZone Payment</a></li>
     </ul>
   </div>
 </nav>

@@ -1,6 +1,7 @@
 package main.java.controller;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import main.java.pojo.Country;
@@ -20,8 +21,10 @@ public class PriorityPaymentController implements PaymentService {
 		Map<String,Object> model=new HashMap<String,Object>();
 		Map<String,Object> countryMap=controller.fetchCountryList();
 		Map<String,Object> paymentAmountMap=controller.fetchInFlowOutFlowList();
+		LinkedHashMap<String,Integer> paymentStatusMap=controller.fetchPaymentStatus();
 		model.put("countryMap", countryMap);
 		model.put("paymentAmountMap", paymentAmountMap);
+		model.put("paymentStatusMap", paymentStatusMap);
 		return ViewUtil.render(request, model, Path.Templates.PRIORITY_PAYMENT_PAGE);
 	};
 
@@ -86,6 +89,15 @@ public class PriorityPaymentController implements PaymentService {
 		paymentAmountMap.put(paymentAmount1.countryFrom, chinaList);
 		
 		return paymentAmountMap;
+	}
+	
+	public LinkedHashMap<String,Integer> fetchPaymentStatus(){
+		LinkedHashMap<String,Integer> paymentStatusMap=new LinkedHashMap<String,Integer>();
+		paymentStatusMap.put("Payment Created", 1234567);
+		paymentStatusMap.put("Payment Authorised", 1243);
+		paymentStatusMap.put("Payment Pending", 21375);
+		paymentStatusMap.put("Payment Rejected", 2315);
+		return paymentStatusMap;
 	}
 
 }

@@ -153,3 +153,7 @@
         margin-right: 0;
     }
 }
+#chartdiv {
+  width: 100%;
+  height: 500px;
+}

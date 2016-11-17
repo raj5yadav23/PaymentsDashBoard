@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,9 +12,9 @@
 
     <title>Priority Payment </title>
     <!-- Custom CSS -->
-    <link href="/css/simple-sidebar.css" rel="stylesheet">
-	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="/css/simple-sidebar.css" rel="stylesheet"/>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  	
 
     <!-- Menu Toggle Script -->
     <script>
@@ -55,7 +57,9 @@
                         
                         </div>
                         <div class="panel-body">
-                      	<div class="col-lg-3 col-md-6">
+                       
+                        #foreach($key in $paymentStatusMap.keySet())
+                        	<div class="col-lg-3 col-md-6">
                     		<div class="panel panel-blue">
                       		  <div class="panel-heading">
                             	<div class="row">
@@ -63,62 +67,17 @@
                                     	<img class="paymentIcon" src="/image/Paper-Money-icon.png">
                                 	</div>
                                 	<div class="col-xs-9 text-right" id="count">
-                                    	<div class="huge">12</div>
-                                    	<div>Payment Created</div>
+                                    	<div class="huge">$paymentStatusMap.get($key)</div>
+                                    	<div>$key</div>
                                 	</div>
                             	</div>
                         	 </div>
                         	</div>  
                 		</div>
-                	 <div class="col-lg-3 col-md-6">
-                    		<div class="panel panel-green">
-                      		  <div class="panel-heading">
-                            	<div class="row">
-                                	<div class="col-xs-3">
-                                    	<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                	</div>
-                                	<div class="col-xs-9 text-right" id="count">
-                                    	<div class="huge">12</div>
-                                    	<div>Payment Authorised</div>
-                                	</div>
-                            	</div>
-                        	</div>
-                        </div>
-                      
-                	</div>
-                	<div class="col-lg-3 col-md-6">
-                   		   <div class="panel panel-yellow">
-                       		 <div class="panel-heading">
-                            	<div class="row">
-                                	<div class="col-xs-3">
-                                  	  <img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                	</div>
-                                	<div class="col-xs-9 text-right" id="count">
-                                    	<div class="huge">124</div>
-                                    	<div>Pending Authorisation</div>
-                                	</div>
-                            	</div>
-                        	</div>
+                        #end
                        
-                    	 </div>
-                	</div>
-                	
-                	<div class="col-lg-3 col-md-6">
-                    	<div class="panel panel-red">
-                        	<div class="panel-heading">
-                            	<div class="row">
-                                	<div class="col-xs-3">
-                                    	<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                	</div>
-                                	<div class="col-xs-9 text-right" id="count">
-                                    	<div class="huge">13</div>
-                                    	<div>Payment Rejected</div>
-                                	</div>
-                            </div>
-                        </div>
-                       
-                    </div>
-                </div>
+                      	
+                
                 </div>
                 </div>
             </div>
@@ -131,254 +90,10 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                        	<div class="row">
-                        	 <div class="col-lg-12">
-                        		<div class="container-fluid">
-  									<h2>Continents</h2>
-  									<ul class="nav nav-tabs">
-   										<li class><a data-toggle="tab" href="#Asia">Asia</a></li>
-    									<li class><a data-toggle="tab" href="#Africa">Africa</a></li>
-    									<li class><a data-toggle="tab" href="#Australia">Australia</a></li>
-    									<li class><a data-toggle="tab" href="#Europe">Europe</a></li>
-    									<li class><a data-toggle="tab" href="#NorthAmerica">North America</a></li>
-    									<li class><a data-toggle="tab" href="#SouthAmerica">South America</a></li>
-  									</ul>
-								
-								#set($country="")
-  								<div class="tab-content">
-    								<div id="Asia" class="tab-pane fade">
-    									<br>
-    									<div class="row">
-    										<div class="panel panel-default">
-    											<div class="panel panel-body">
-    												<div class="col-lg-3 col-md-6">
-                   		   								<div class="panel panel-yellow">
-                       		 								<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                  	  									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">124</div>
-                                    									<div>Payment Created</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    	 								</div>
-                									</div>
-                									<div class="col-lg-3 col-md-6">
-                    									<div class="panel panel-red">
-                        									<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                    									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">13</div>
-                                    									<div>Payment Authorized</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    									</div>
-                									</div>
-                									<div class="col-lg-3 col-md-6">
-                    									<div class="panel panel-red">
-                        									<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                    									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">13</div>
-                                    									<div>Pending Authorization</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    									</div>
-                									</div>
-                									<div class="col-lg-3 col-md-6">
-                    									<div class="panel panel-red">
-                        									<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                    									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">13</div>
-                                    									<div>Payment Rejected</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    									</div>
-                									</div>
-    											</div>
-    										</div>
-    									</div>
-      									#foreach($country in $countryMap.keySet())
-      									<div class="panel-group" id="accordion">
-        										<div class="panel panel-default">
-            										<div class="panel-heading">
-                										<h4 class="panel-title">
-                    										<a data-toggle="collapse" data-parent="#accordion" href="#$country">$countryMap.get($country).getCountryName()</a>
-                										</h4>
-            										</div>
-            										<div id="$country" class="panel-collapse collapse out">
-                										<div class="panel-body">
-                   											 <table class="table table-hover">
-                   											 	<thead>
-                   											 		<tr>
-                   											 			<th>Continent</th>
-                   											 			<th>InFlow</th>
-                   											 			<th>OutFlow</th>
-                   											 		</tr>
-                   											 	</thead>
-                   											 	<tbody>
-                   											 		#foreach($entry in $paymentAmountMap.entrySet())
-                   											 			#foreach($paymentAmount in $entry.getValue())
-                   											 				#if($paymentAmount.getCountryFrom()== $countryMap.get($country).getCountryName())
-                   											 					<tr>
-                   											 						<td>$paymentAmount.getContinentName()</td>
-                   											 						<td>$paymentAmount.getAmount()</td>
-                   											 						<td>$paymentAmount.getCountryTo()</td>
-                   											 					</tr>
-                   											 				#end
-                   											 			#end
-                   											 		#end
-                   											 	</tbody>
-                   											 </table>
-                										</div>
-            										</div>
-        										</div>
-    										</div>	
-    										#end
-    									</div>
-    									<div id="Africa" class="tab-pane fade">
-    										<!-- Africa starts here -->
-      											<br>
-    									<div class="row">
-    										<div class="panel panel-default">
-    											<div class="panel panel-body">
-    												<div class="col-lg-3 col-md-6">
-                   		   								<div class="panel panel-yellow">
-                       		 								<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                  	  									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">124</div>
-                                    									<div>Payment Created</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    	 								</div>
-                									</div>
-                									<div class="col-lg-3 col-md-6">
-                    									<div class="panel panel-red">
-                        									<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                    									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">13</div>
-                                    									<div>Payment Authorized</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    									</div>
-                									</div>
-                									<div class="col-lg-3 col-md-6">
-                    									<div class="panel panel-red">
-                        									<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                    									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">13</div>
-                                    									<div>Pending Authorization</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    									</div>
-                									</div>
-                									<div class="col-lg-3 col-md-6">
-                    									<div class="panel panel-red">
-                        									<div class="panel-heading">
-                            									<div class="row">
-                                									<div class="col-xs-3">
-                                    									<img class="paymentIcon" src="/image/Paper-Money-icon.png">
-                                									</div>
-                                									<div class="col-xs-9 text-right" id="count">
-                                    									<div class="huge">13</div>
-                                    									<div>Payment Rejected</div>
-                                									</div>
-                            									</div>
-                        									</div>
-                    									</div>
-                									</div>
-    											</div>
-    										</div>
-    									</div>
-      									#foreach($country in $countryMap.keySet())
-      									<div class="panel-group" id="accordion">
-        										<div class="panel panel-default">
-            										<div class="panel-heading">
-                										<h4 class="panel-title">
-                    										<a data-toggle="collapse" data-parent="#accordion" href="#$country">$countryMap.get($country).getCountryName()</a>
-                										</h4>
-            										</div>
-            										<div id="$country" class="panel-collapse collapse out">
-                										<div class="panel-body">
-                   											 <table class="table table-hover">
-                   											 	<thead>
-                   											 		<tr>
-                   											 			<th>Continent</th>
-                   											 			<th>InFlow</th>
-                   											 			<th>OutFlow</th>
-                   											 		</tr>
-                   											 	</thead>
-                   											 	<tbody>
-                   											 		#foreach($entry in $paymentAmountMap.entrySet())
-                   											 			#foreach($paymentAmount in $entry.getValue())
-                   											 				#if($paymentAmount.getCountryFrom()== $countryMap.get($country).getCountryName())
-                   											 					<tr>
-                   											 						<td>$paymentAmount.getContinentName()</td>
-                   											 						<td>$paymentAmount.getAmount()</td>
-                   											 						<td>$paymentAmount.getCountryTo()</td>
-                   											 					</tr>
-                   											 				#end
-                   											 			#end
-                   											 		#end
-                   											 	</tbody>
-                   											 </table>
-                										</div>
-            										</div>
-        										</div>
-    										</div>	
-    										#end
-    									</div>
-      										<!-- Africa ends here -->
-    									<div id="Australia" class="tab-pane fade">
-      									
-    									</div>
-    									<div id="Europe" class="tab-pane fade">
-      									
-    									</div>
-    									<div id="NorthAmerica" class="tab-pane fade">
-      															
-    									<div id="SouthAmerica" class="tab-pane fade">
-      										
-    									</div>
-    								</div>
-    								
- 								 </div>
-							</div>	 
-                        	</div>
-                        	</div>
+                      
                             <div class="row">
                                 <div class="col-lg-12">
+                                    #parse("/velocity/worldContinent.vm") 
                                     
                                 </div>
                                
