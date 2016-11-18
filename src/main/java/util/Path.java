@@ -9,6 +9,7 @@ public class Path {
         @Getter public static final String INDEX_PAGE = "/index";
         @Getter public static final String PRIORITY_PAYMENT_PAGE = "/priorityPayment";
         @Getter public static final String CUSTOMER_TRANSFER_PAGE = "/customerTransfer";
+        @Getter public static final String CONTINENT_DATA_PAGE="/continentData";
         
     }
 	
@@ -18,6 +19,7 @@ public class Path {
 		public static final String INDEX_PAGE="/velocity/index.vm";
 		public static final String PRIORITY_PAYMENT_PAGE="/velocity/priorityPayment.vm";
 		public static final String CUSTOMER_TRANSFER_PAGE="/velocity/customerTransfer.vm";
+		public static final String CONTINENT_DATA_PAGE="/velocity/continentData.vm";
 	}
 
 }

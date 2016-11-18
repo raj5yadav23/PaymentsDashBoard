@@ -17,7 +17,7 @@ public class Application {
 		get(Path.Web.TEST_PAGE,EntryController.testPage);
 		get(Path.Web.INDEX_PAGE, EntryController.indexPage);
 		get(Path.Web.PRIORITY_PAYMENT_PAGE,PriorityPaymentController.priorityPaymentPage);
-		
+		get(Path.Web.CONTINENT_DATA_PAGE,PriorityPaymentController.continentDataPage);
 	}
 
 

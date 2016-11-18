@@ -131,7 +131,7 @@ function handleMapObjectClick( event ) {
     $.fancybox({
 		    href: event.mapObject.modalUrl,
 		    title: event.mapObject.title,
-		   	href: '/priorityPayment',
+		   	href: '/continentData',
         	type: 'iframe'
 		  });
 }, 2000);

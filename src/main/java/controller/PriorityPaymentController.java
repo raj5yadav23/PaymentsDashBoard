@@ -18,6 +18,12 @@ public class PriorityPaymentController implements PaymentService {
 	static PriorityPaymentController controller=new PriorityPaymentController();
 	
 	public static Route priorityPaymentPage = (Request request,Response response) -> {
+		LinkedHashMap<String,Integer> paymentStatusMap=controller.fetchPaymentStatus();
+		model.put("paymentStatusMap", paymentStatusMap);
+		return ViewUtil.render(request, model, Path.Templates.PRIORITY_PAYMENT_PAGE);
+	};
+	
+	public static Route continentDataPage=(Request request,Response response) -> {
 		Map<String,Object> model=new HashMap<String,Object>();
 		Map<String,Object> countryMap=controller.fetchCountryList();
 		Map<String,Object> paymentAmountMap=controller.fetchInFlowOutFlowList();
@@ -26,7 +32,7 @@ public class PriorityPaymentController implements PaymentService {
 		model.put("paymentAmountMap", paymentAmountMap);
 		model.put("paymentStatusMap", paymentStatusMap);
 		return ViewUtil.render(request, model, Path.Templates.PRIORITY_PAYMENT_PAGE);
-	};
+	}
 
 	@Override
 	public Map<String, Object> fetchCountryList() {
@@ -99,5 +105,6 @@ public class PriorityPaymentController implements PaymentService {
 		paymentStatusMap.put("Payment Rejected", 2315);
 		return paymentStatusMap;
 	}
+	
 
 }
